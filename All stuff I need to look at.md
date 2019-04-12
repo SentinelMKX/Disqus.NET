@@ -1,0 +1,153 @@
+Aet
+    set/anonymousSubscribe
+	aet/dismiss
+	aet/export
+	aet/pendingExportInfo
+	aet/subscribe
+Announcements
+Announcements/Messages
+Announcements/Templates
+Apothecary
+   apothecary/suggest
+Applications
+   applications/listUsage
+Blacklists
+	blacklists/add
+    blacklists/backfillCounters
+	blacklists/list
+	blacklists/remove
+Category
+	categories/create
+	categories/details
+	categories/list
+	categories/listPosts
+	categories/listThreads
+Exports
+	exports/exportForum
+ForumCategory
+	forumCategories/details
+	forumCategories/list
+Forums
+	forums/addModerator
+	forums/create
+	forums/details
+	forums/disableAds
+	forums/fixFavIconsForClassifiedForums
+	forums/follow
+	forums/generateInterestingContent
+	forums/interestingForums
+	forums/listCategories
+	forums/listFollowers
+	forums/listModerators
+	forums/listMostActiveUsers
+	forums/listMostLikedUsers
+	forums/listPosts
+	forums/listThreads
+	forums/listUserModerationHistory
+	forums/removeDefaultAvatar
+	forums/removeModerator
+	forums/unfollow
+	forums/update
+	forums/updateDefaultAvatar
+	forums/validate
+Forums/Block
+	forums/block/banPostAuthor
+Imports
+	imports/details
+	imports/list
+Internal/Announcements/Messages
+Internal/Forums/Actionhistory
+	internal/forums/actionHistory/bulkCreate
+	internal/forums/actionHistory/create
+	internal/forums/actionHistory/delete
+	internal/forums/actionHistory/update
+Media
+Organizations
+	organizations/addAdmin
+	organizations/listAdmins
+	organizations/removeAdmin
+	organizations/setRole
+Organizations/Campaigns
+Organizations/Saas
+	organizations/saas/billingInformation
+	organizations/saas/currentPlan
+	organizations/saas/removePaymentInfo
+	organizations/saas/subscribe
+	organizations/saas/unsubscribe
+	organizations/saas/updateInvoiceInfo
+	organizations/saas/updatePaymentInfo
+Posts
+	posts/approve
+	posts/create
+	posts/details
+	posts/getContext
+	posts/list
+	posts/listModerationHistory
+	posts/listPopular
+	posts/listReporters
+	posts/remove
+	posts/report
+	posts/restore
+	posts/spam
+	posts/update
+	posts/vote
+Saas/Packages
+	saas/packages/list
+Threads
+	threads/approve
+	threads/close
+	threads/create
+	threads/details
+	threads/list
+	threads/listHot
+	threads/listPopular
+	threads/listPosts
+	threads/listUsersVotedThread
+	threads/open
+	threads/remove
+	threads/restore
+	threads/set
+	threads/spam
+	threads/subscribe
+	threads/unsubscribe
+	threads/update
+	threads/vote
+Topics
+	topics/update
+Trends
+	trends/listThreads
+TrustedDomain
+	forums/trustedDomain/create
+	forums/trustedDomain/kill
+	forums/trustedDomain/list
+Users
+	users/checkUsername
+	users/details
+	users/follow
+	users/interestingUsers
+	users/listActiveForums
+	users/listActivity
+	users/listFollowers
+	users/listFollowing
+	users/listFollowingChannels
+	users/listFollowingForums
+	users/listForums
+	users/listModeratedChannels
+	users/listMostActiveForums
+	users/listOwnedChannels
+	users/listPosts
+	users/removeFollower
+	users/report
+	users/unfollow
+	users/updateProfile
+Whitelists
+	whitelists/add
+	whitelists/list
+	whitelists/remove
+	
+	
+	
+	
+	
+	
+	

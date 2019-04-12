@@ -35,10 +35,7 @@ namespace Disqus.NET
 
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-            if (response.IsSuccessStatusCode)
-            {
-                return JsonConvert.DeserializeObject<T>(content, SerializerSettings);
-            }
+            if (response.IsSuccessStatusCode) return JsonConvert.DeserializeObject<T>(content, SerializerSettings);
 
             IDisqusResponse<string> errorResponse =
                 JsonConvert.DeserializeObject<DisqusErrorResponse>(content, SerializerSettings);
