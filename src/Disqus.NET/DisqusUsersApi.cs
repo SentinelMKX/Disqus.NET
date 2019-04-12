@@ -89,14 +89,12 @@ namespace Disqus.NET
             var forums = new List<DisqusInterestingObject<DisqusUser>>();
 
             foreach (var interestingForumItem in response.Response.Items)
-            {
                 if (response.Response.Objects.TryGetValue(interestingForumItem.Id, out var forum))
                     forums.Add(new DisqusInterestingObject<DisqusUser>
                     {
                         Reason = interestingForumItem.Reason,
                         Object = forum
                     });
-            }
 
             return new CursoredDisqusResponse<IEnumerable<DisqusInterestingObject<DisqusUser>>>
             {
