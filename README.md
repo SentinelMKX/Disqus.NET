@@ -6,5 +6,8 @@
 ## Example usage
  Soon...
 
+## Installation 
+
+[Disqus.NET Updated By Arisa](https://www.nuget.org/packages/Disqus.NET-Updated-By-Arisa/) is available as Nuget-package
 
 Useful stuff: https://disqus.com/api/docs/
