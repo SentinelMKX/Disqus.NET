@@ -7,7 +7,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusForumListThreadsRequest : DisqusRequestBase
     {
-        private DisqusForumListThreadsRequest(string forum) : base()
+        private DisqusForumListThreadsRequest(string forum)
         {
             Parameters.Add(new KeyValuePair<string, string>("forum", forum));
         }
@@ -19,7 +19,8 @@ namespace Disqus.NET.Requests
 
         public DisqusForumListThreadsRequest Thread(DisqusThreadLookupType lookupType, params string[] threads)
         {
-           var parameters = threads.Select(thread => new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
+            var parameters = threads.Select(thread =>
+                new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
             Parameters.AddRange(parameters);
 
             return this;

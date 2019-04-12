@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusPostCreateRequest: DisqusRequestBase
+    public class DisqusPostCreateRequest : DisqusRequestBase
     {
         private DisqusPostCreateRequest(string message)
         {
@@ -15,7 +15,7 @@ namespace Disqus.NET.Requests
             return new DisqusPostCreateRequest(message);
         }
 
-        public DisqusPostCreateRequest Parent(int parentPostId)
+        public DisqusPostCreateRequest Parent(long parentPostId)
         {
             Parameters.Add(new KeyValuePair<string, string>("parent", parentPostId.ToString()));
 

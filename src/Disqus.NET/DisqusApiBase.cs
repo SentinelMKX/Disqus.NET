@@ -7,7 +7,19 @@ namespace Disqus.NET
     public class DisqusApiBase
     {
         protected readonly IDisqusRequestProcessor RequestProcessor;
+
+        public DisqusApiBase(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key)
+        {
+            if (requestProcessor == null) throw new ArgumentNullException(nameof(requestProcessor));
+
+            if (string.IsNullOrWhiteSpace(key)) throw new ArgumentNullException(nameof(key));
+
+            RequestProcessor = requestProcessor;
+            Auth = new DisqusAuth(authMethod, key);
+        }
+
         public DisqusAuth Auth { get; }
+        protected DisqusParameters Parameters => new DisqusParameters(Auth.AuthMethod, Auth.ApiKey);
 
         protected class DisqusParameters
         {
@@ -16,7 +28,9 @@ namespace Disqus.NET
             public DisqusParameters(DisqusAuthMethod authMethod, string key)
             {
                 _parameters = new List<KeyValuePair<string, string>>();
-                _parameters.Add(new KeyValuePair<string, string>(authMethod == DisqusAuthMethod.PublicKey ? "api_key" : "api_secret", key));
+                _parameters.Add(
+                    new KeyValuePair<string, string>(
+                        authMethod == DisqusAuthMethod.PublicKey ? "api_key" : "api_secret", key));
             }
 
             public static implicit operator Collection<KeyValuePair<string, string>>(DisqusParameters obj)
@@ -27,17 +41,14 @@ namespace Disqus.NET
             }
 
             /// <summary>
-            /// Ignores parameter if value is null
+            ///     Ignores parameter if value is null
             /// </summary>
             /// <param name="name"></param>
             /// <param name="value"></param>
             /// <returns></returns>
             public DisqusParameters WithOptionalParameter(string name, object value)
             {
-                if (value != null)
-                {
-                    _parameters.Add(new KeyValuePair<string, string>(name, value.ToString()));
-                }
+                if (value != null) _parameters.Add(new KeyValuePair<string, string>(name, value.ToString()));
 
                 return this;
             }
@@ -50,10 +61,7 @@ namespace Disqus.NET
 
             public DisqusParameters WithMultipleParameters(string name, string[] values)
             {
-                foreach (var value in values)
-                {
-                    _parameters.Add(new KeyValuePair<string, string>(name, value));
-                }
+                foreach (var value in values) _parameters.Add(new KeyValuePair<string, string>(name, value));
                 return this;
             }
 
@@ -63,23 +71,6 @@ namespace Disqus.NET
 
                 return this;
             }
-        }
-        protected DisqusParameters Parameters => new DisqusParameters(Auth.AuthMethod, Auth.ApiKey);
-
-        public DisqusApiBase(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key)
-        {
-            if (requestProcessor == null)
-            {
-                throw new ArgumentNullException(nameof(requestProcessor));
-            }
-
-            if (string.IsNullOrWhiteSpace(key))
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            RequestProcessor = requestProcessor;
-            Auth = new DisqusAuth(authMethod, key);
         }
     }
 }

@@ -5,10 +5,10 @@ using Disqus.NET.Extensions;
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusUserListPostsRequest: DisqusRequestBase
+    public class DisqusUserListPostsRequest : DisqusRequestBase
     {
         private DisqusUserListPostsRequest()
-        {    
+        {
         }
 
         public static DisqusUserListPostsRequest New()

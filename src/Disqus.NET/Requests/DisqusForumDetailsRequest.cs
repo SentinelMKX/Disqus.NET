@@ -6,7 +6,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusForumDetailsRequest : DisqusRequestBase
     {
-        private DisqusForumDetailsRequest(string forum) : base()
+        private DisqusForumDetailsRequest(string forum)
         {
             Parameters.Add(new KeyValuePair<string, string>("forum", forum));
         }

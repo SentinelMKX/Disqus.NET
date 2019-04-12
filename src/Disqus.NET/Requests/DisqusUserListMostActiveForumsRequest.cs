@@ -5,7 +5,7 @@ namespace Disqus.NET.Requests
     public class DisqusUserListMostActiveForumsRequest : DisqusRequestBase
     {
         private DisqusUserListMostActiveForumsRequest()
-        {    
+        {
         }
 
         public static DisqusUserListMostActiveForumsRequest New()

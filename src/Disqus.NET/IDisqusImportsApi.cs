@@ -8,6 +8,7 @@ namespace Disqus.NET
     {
         Task<DisqusResponse<DisqusImport>> DetailsAsync(DisqusAccessToken accessToken, string forum, string group);
 
-        Task<CursoredDisqusResponse<IEnumerable<DisqusImport>>> ListAsync(DisqusAccessToken accessToken, string forum, string cursor = null);
+        Task<CursoredDisqusResponse<IEnumerable<DisqusImport>>> ListAsync(DisqusAccessToken accessToken, string forum,
+            string cursor = null);
     }
 }

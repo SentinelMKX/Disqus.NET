@@ -6,9 +6,10 @@ namespace Disqus.NET.Requests
 {
     public class DisqusThreadSetRequest : DisqusRequestBase
     {
-        private DisqusThreadSetRequest(DisqusThreadLookupType lookupType, params string[] threads) : base()
+        private DisqusThreadSetRequest(DisqusThreadLookupType lookupType, params string[] threads)
         {
-            var parameters = threads.Select(thread => new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
+            var parameters = threads.Select(thread =>
+                new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
             Parameters.AddRange(parameters);
         }
 
@@ -26,7 +27,8 @@ namespace Disqus.NET.Requests
 
         public DisqusThreadSetRequest ByThreads(DisqusThreadLookupType lookupType, params string[] threads)
         {
-            var parameters = threads.Select(thread => new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
+            var parameters = threads.Select(thread =>
+                new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
             Parameters.AddRange(parameters);
 
             return this;

@@ -4,7 +4,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusForumListMostLikedUsersRequest : DisqusRequestBase
     {
-        private DisqusForumListMostLikedUsersRequest(string forum) : base()
+        private DisqusForumListMostLikedUsersRequest(string forum)
         {
             Parameters.Add(new KeyValuePair<string, string>("forum", forum));
         }

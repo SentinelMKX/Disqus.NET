@@ -4,27 +4,9 @@ namespace Disqus.NET
 {
     public class DisqusApi : IDisqusApi
     {
-        public IDisqusApplicationsApi Applications { get; }
-        public IDisqusBlacklistsApi Blacklists { get; }
-        public IDisqusCategoryApi Category { get; }
-        public IDisqusExportsApi Exports { get; }
-        public IDisqusForumCategoryApi ForumCategory { get; }
-        public IDisqusForumsApi Forums { get; }
-        public IDisqusImportsApi Imports { get; }
-        public IDisqusOrganizationsApi Organizations { get; }
-        public IDisqusPostsApi Posts { get; }
-        public IDisqusThreadsApi Threads { get; }
-        public IDisqusTrendsApi Trends { get; }
-        public IDisqusTrustedDomainsApi TrustedDomains { get; }
-        public IDisqusUsersApi Users { get; }
-        public IDisqusWhitelistsApi Whitelists { get; set; }
-
         public DisqusApi(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key)
         {
-            if (string.IsNullOrWhiteSpace(key))
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
+            if (string.IsNullOrWhiteSpace(key)) throw new ArgumentNullException(nameof(key));
 
             Applications = new DisqusApplicationsApi(requestProcessor, authMethod, key);
             Blacklists = new DisqusBlacklistsApi(requestProcessor, authMethod, key);
@@ -42,8 +24,24 @@ namespace Disqus.NET
             Whitelists = new DisqusWhitelistsApi(requestProcessor, authMethod, key);
         }
 
-        public DisqusApi(DisqusAuthMethod authMethod, string key): this(new DisqusRequestProcessor(new DisqusRestClient()), authMethod, key)
+        public DisqusApi(DisqusAuthMethod authMethod, string key) : this(
+            new DisqusRequestProcessor(new DisqusRestClient()), authMethod, key)
         {
         }
+
+        public IDisqusApplicationsApi Applications { get; }
+        public IDisqusBlacklistsApi Blacklists { get; }
+        public IDisqusCategoryApi Category { get; }
+        public IDisqusExportsApi Exports { get; }
+        public IDisqusForumCategoryApi ForumCategory { get; }
+        public IDisqusForumsApi Forums { get; }
+        public IDisqusImportsApi Imports { get; }
+        public IDisqusOrganizationsApi Organizations { get; }
+        public IDisqusPostsApi Posts { get; }
+        public IDisqusThreadsApi Threads { get; }
+        public IDisqusTrendsApi Trends { get; }
+        public IDisqusTrustedDomainsApi TrustedDomains { get; }
+        public IDisqusUsersApi Users { get; }
+        public IDisqusWhitelistsApi Whitelists { get; set; }
     }
 }

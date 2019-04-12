@@ -6,9 +6,10 @@ namespace Disqus.NET.Requests
 {
     public class DisqusThreadRemoveRequest : DisqusRequestBase
     {
-        private DisqusThreadRemoveRequest(DisqusThreadLookupType lookupType, params string[] threads) : base()
+        private DisqusThreadRemoveRequest(DisqusThreadLookupType lookupType, params string[] threads)
         {
-            var parameters = threads.Select(thread => new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
+            var parameters = threads.Select(thread =>
+                new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
             Parameters.AddRange(parameters);
         }
 

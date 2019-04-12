@@ -17,7 +17,7 @@ namespace Disqus.NET.Requests
         }
 
         /// <summary>
-        /// Allow to specify relations to include with your response.
+        ///     Allow to specify relations to include with your response.
         /// </summary>
         /// <param name="related"></param>
         /// <returns></returns>

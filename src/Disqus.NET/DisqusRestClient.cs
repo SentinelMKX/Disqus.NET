@@ -10,14 +10,32 @@ namespace Disqus.NET
 {
     public class DisqusRestClient : IDisqusRestClient
     {
-        internal async Task<HttpResponseMessage> ExecuteRequestAsync(Func<HttpClient, Task<HttpResponseMessage>> httpClientAction)
+        public async Task<HttpResponseMessage> ExecuteGetAsync(string endpoint,
+            ICollection<KeyValuePair<string, string>> parameters)
         {
-            using (HttpClientHandler gzipHandler = new HttpClientHandler())
+            var queryString = string.Join("&",
+                parameters.Select(pair => string.Format("{0}={1}", pair.Key, pair.Value)));
+            var url = string.Format("{0}?{1}", endpoint, queryString);
+
+            return await ExecuteRequestAsync(async client => await client.GetAsync(url).ConfigureAwait(false))
+                .ConfigureAwait(false);
+        }
+
+        public async Task<HttpResponseMessage> ExecutePostAsync(string endpoint,
+            ICollection<KeyValuePair<string, string>> parameters)
+        {
+            return await ExecuteRequestAsync(async client =>
+                    await client.PostAsync(endpoint, new FormUrlEncodedContent(parameters)).ConfigureAwait(false))
+                .ConfigureAwait(false);
+        }
+
+        internal async Task<HttpResponseMessage> ExecuteRequestAsync(
+            Func<HttpClient, Task<HttpResponseMessage>> httpClientAction)
+        {
+            using (var gzipHandler = new HttpClientHandler())
             {
                 if (gzipHandler.SupportsAutomaticDecompression)
-                {
                     gzipHandler.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-                }
 
                 using (var client = new HttpClient(gzipHandler))
                 {
@@ -27,21 +45,6 @@ namespace Disqus.NET
                     return await httpClientAction(client).ConfigureAwait(false);
                 }
             }
-        }
-
-        public async Task<HttpResponseMessage> ExecuteGetAsync(string endpoint, ICollection<KeyValuePair<string, string>> parameters)
-        {
-            string queryString = string.Join("&", parameters.Select(pair => string.Format("{0}={1}", pair.Key, pair.Value)));
-            string url = string.Format("{0}?{1}", endpoint, queryString);
-
-            return await ExecuteRequestAsync(async client => await client.GetAsync(url).ConfigureAwait(false))
-                .ConfigureAwait(false);
-        }
-
-        public async Task<HttpResponseMessage> ExecutePostAsync(string endpoint, ICollection<KeyValuePair<string, string>> parameters)
-        {
-            return await ExecuteRequestAsync(async client => await client.PostAsync(endpoint, new FormUrlEncodedContent(parameters)).ConfigureAwait(false))
-                .ConfigureAwait(false);
         }
     }
 }

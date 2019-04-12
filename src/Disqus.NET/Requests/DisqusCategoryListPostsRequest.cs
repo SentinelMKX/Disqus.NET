@@ -7,7 +7,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusCategoryListPostsRequest : DisqusRequestBase
     {
-        private DisqusCategoryListPostsRequest(int categoryId) : base()
+        private DisqusCategoryListPostsRequest(int categoryId)
         {
             Parameters.Add(new KeyValuePair<string, string>("category", categoryId.ToString()));
         }

@@ -1,6 +1,6 @@
 ﻿namespace Disqus.NET
 {
-    public class DisqusErrorResponse: IDisqusResponse<string>
+    public class DisqusErrorResponse : IDisqusResponse<string>
     {
         public DisqusApiResponseCode Code { get; set; }
 

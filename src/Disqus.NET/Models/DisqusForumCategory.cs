@@ -5,13 +5,10 @@ namespace Disqus.NET.Models
 {
     public class DisqusForumCategory
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
+        [JsonProperty("id")] public int Id { get; set; }
 
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        [JsonProperty("name")] public string Name { get; set; }
 
-        [JsonProperty("date_added")]
-        public DateTime Added { get; set; }
+        [JsonProperty("date_added")] public DateTime Added { get; set; }
     }
 }

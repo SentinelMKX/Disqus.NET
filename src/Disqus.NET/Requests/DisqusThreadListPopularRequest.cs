@@ -6,7 +6,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusThreadListPopularRequest : DisqusRequestBase
     {
-        private DisqusThreadListPopularRequest() : base()
+        private DisqusThreadListPopularRequest()
         {
         }
 

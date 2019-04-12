@@ -4,7 +4,7 @@ using Disqus.NET.Extensions;
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusPostDetailsRequest: DisqusRequestBase
+    public class DisqusPostDetailsRequest : DisqusRequestBase
     {
         private DisqusPostDetailsRequest(long postId)
         {
@@ -17,7 +17,7 @@ namespace Disqus.NET.Requests
         }
 
         /// <summary>
-        /// Allow to specify relations to include with your response.
+        ///     Allow to specify relations to include with your response.
         /// </summary>
         /// <param name="related"></param>
         /// <returns></returns>

@@ -6,13 +6,12 @@ namespace Disqus.NET.Requests
 {
     public class DisqusForumUpdateRequest : DisqusRequestBase
     {
-        private DisqusForumUpdateRequest(string forum) : base()
+        private DisqusForumUpdateRequest(string forum)
         {
             Parameters.Add(new KeyValuePair<string, string>("forum", forum));
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="forum"></param>
         /// <returns></returns>
@@ -93,42 +92,48 @@ namespace Disqus.NET.Requests
 
         public DisqusForumUpdateRequest AdsPositionTopEnabled(bool adsPositionTopEnabled)
         {
-            Parameters.Add(new KeyValuePair<string, string>("adsPositionTopEnabled", adsPositionTopEnabled ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("adsPositionTopEnabled",
+                adsPositionTopEnabled ? "1" : "0"));
 
             return this;
         }
 
         public DisqusForumUpdateRequest AdsPositionBottomEnabled(bool adsPositionBottomEnabled)
         {
-            Parameters.Add(new KeyValuePair<string, string>("adsPositionBottomEnabled", adsPositionBottomEnabled ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("adsPositionBottomEnabled",
+                adsPositionBottomEnabled ? "1" : "0"));
 
             return this;
         }
 
         public DisqusForumUpdateRequest AdsPositionInThreadEnabled(bool adsPositionInThreadEnabled)
         {
-            Parameters.Add(new KeyValuePair<string, string>("adsPositionInthreadEnabled", adsPositionInThreadEnabled ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("adsPositionInthreadEnabled",
+                adsPositionInThreadEnabled ? "1" : "0"));
 
             return this;
         }
 
         public DisqusForumUpdateRequest AdsProductLinksEnabled(bool adsProductLinksEnabled)
         {
-            Parameters.Add(new KeyValuePair<string, string>("adsProductLinksEnabled", adsProductLinksEnabled ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("adsProductLinksEnabled",
+                adsProductLinksEnabled ? "1" : "0"));
 
             return this;
         }
 
         public DisqusForumUpdateRequest AdsProductVideoEnabled(bool adsProductVideoEnabled)
         {
-            Parameters.Add(new KeyValuePair<string, string>("adsProductVideoEnabled", adsProductVideoEnabled ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("adsProductVideoEnabled",
+                adsProductVideoEnabled ? "1" : "0"));
 
             return this;
         }
 
         public DisqusForumUpdateRequest AdsProductStoriesEnabled(bool adsProductStoriesEnabled)
         {
-            Parameters.Add(new KeyValuePair<string, string>("adsProductStoriesEnabled", adsProductStoriesEnabled ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("adsProductStoriesEnabled",
+                adsProductStoriesEnabled ? "1" : "0"));
 
             return this;
         }
@@ -142,7 +147,8 @@ namespace Disqus.NET.Requests
 
         public DisqusForumUpdateRequest LinkAffiliationEnabled(bool linkAffiliationEnabled)
         {
-            Parameters.Add(new KeyValuePair<string, string>("linkAffiliationEnabled", linkAffiliationEnabled ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("linkAffiliationEnabled",
+                linkAffiliationEnabled ? "1" : "0"));
 
             return this;
         }
@@ -167,7 +173,8 @@ namespace Disqus.NET.Requests
 
         public DisqusForumUpdateRequest OrganicDiscoveryEnabled(bool organicDiscoveryEnabled)
         {
-            Parameters.Add(new KeyValuePair<string, string>("organicDiscoveryEnabled", organicDiscoveryEnabled ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("organicDiscoveryEnabled",
+                organicDiscoveryEnabled ? "1" : "0"));
 
             return this;
         }
@@ -186,11 +193,13 @@ namespace Disqus.NET.Requests
             return this;
         }
 
-        public DisqusForumUpdateRequest UnapproveReputationLevel(DisqusForumUnapproveReputationLevel unapproveReputationLevel)
+        public DisqusForumUpdateRequest UnapproveReputationLevel(
+            DisqusForumUnapproveReputationLevel unapproveReputationLevel)
         {
             if (unapproveReputationLevel == DisqusForumUnapproveReputationLevel.None) return this;
 
-            Parameters.Add(new KeyValuePair<string, string>("unapproveReputationLevel", unapproveReputationLevel.ToString("D")));
+            Parameters.Add(new KeyValuePair<string, string>("unapproveReputationLevel",
+                unapproveReputationLevel.ToString("D")));
 
             return this;
         }
@@ -239,14 +248,16 @@ namespace Disqus.NET.Requests
 
         public DisqusForumUpdateRequest DisableThirdPartyTrackers(bool disableThirdPartyTrackers)
         {
-            Parameters.Add(new KeyValuePair<string, string>("disableThirdPartyTrackers", disableThirdPartyTrackers ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("disableThirdPartyTrackers",
+                disableThirdPartyTrackers ? "1" : "0"));
 
             return this;
         }
 
         public DisqusForumUpdateRequest FlaggingNotifications(bool flaggingNotifications)
         {
-            Parameters.Add(new KeyValuePair<string, string>("flaggingNotifications", flaggingNotifications ? "1" : "0"));
+            Parameters.Add(new KeyValuePair<string, string>("flaggingNotifications",
+                flaggingNotifications ? "1" : "0"));
 
             return this;
         }

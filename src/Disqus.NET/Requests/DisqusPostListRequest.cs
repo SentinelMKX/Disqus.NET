@@ -5,7 +5,7 @@ using Disqus.NET.Extensions;
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusPostListRequest: DisqusRequestBase
+    public class DisqusPostListRequest : DisqusRequestBase
     {
         private DisqusPostListRequest()
         {
@@ -24,7 +24,7 @@ namespace Disqus.NET.Requests
         }
 
         /// <summary>
-        /// Looks up a thread by ID
+        ///     Looks up a thread by ID
         /// </summary>
         /// <param name="threads"></param>
         /// <returns></returns>
@@ -37,7 +37,7 @@ namespace Disqus.NET.Requests
         }
 
         /// <summary>
-        /// Looks up a thread by link
+        ///     Looks up a thread by link
         /// </summary>
         /// <param name="threadLinks"></param>
         /// <returns></returns>
@@ -50,7 +50,7 @@ namespace Disqus.NET.Requests
         }
 
         /// <summary>
-        /// Looks up a thread by ID
+        ///     Looks up a thread by ID
         /// </summary>
         /// <param name="forums"></param>
         /// <returns></returns>
@@ -63,7 +63,6 @@ namespace Disqus.NET.Requests
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="all"></param>
         /// <returns></returns>
@@ -77,7 +76,6 @@ namespace Disqus.NET.Requests
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="timestamp"></param>
         /// <returns></returns>
@@ -89,7 +87,6 @@ namespace Disqus.NET.Requests
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="timestamp"></param>
         /// <returns></returns>

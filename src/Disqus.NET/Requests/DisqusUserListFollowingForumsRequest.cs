@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using Disqus.NET.Extensions;
 
 namespace Disqus.NET.Requests
 {
     public class DisqusUserListFollowingForumsRequest : DisqusRequestBase
     {
         private DisqusUserListFollowingForumsRequest()
-        {    
+        {
         }
 
         public static DisqusUserListFollowingForumsRequest New()

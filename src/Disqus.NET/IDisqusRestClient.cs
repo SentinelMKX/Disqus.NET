@@ -6,8 +6,10 @@ namespace Disqus.NET
 {
     public interface IDisqusRestClient
     {
-        Task<HttpResponseMessage> ExecuteGetAsync(string endpoint, ICollection<KeyValuePair<string, string>> parameters);
+        Task<HttpResponseMessage> ExecuteGetAsync(string endpoint,
+            ICollection<KeyValuePair<string, string>> parameters);
 
-        Task<HttpResponseMessage> ExecutePostAsync(string endpoint, ICollection<KeyValuePair<string, string>> parameters);
+        Task<HttpResponseMessage> ExecutePostAsync(string endpoint,
+            ICollection<KeyValuePair<string, string>> parameters);
     }
 }

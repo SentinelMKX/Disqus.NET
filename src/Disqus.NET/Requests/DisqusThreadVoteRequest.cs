@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-
 using Disqus.NET.Extensions;
 
 namespace Disqus.NET.Requests
 {
     public class DisqusThreadVoteRequest : DisqusRequestBase
     {
-        private DisqusThreadVoteRequest(DisqusThreadLookupType lookupType, string thread, DisqusVote vote) : base()
+        private DisqusThreadVoteRequest(DisqusThreadLookupType lookupType, string thread, DisqusVote vote)
         {
             Parameters.Add(new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
             Parameters.Add(new KeyValuePair<string, string>("vote", vote.ToString("D")));

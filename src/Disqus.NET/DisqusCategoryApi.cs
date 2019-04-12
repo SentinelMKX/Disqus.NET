@@ -11,17 +11,18 @@ namespace Disqus.NET
         public DisqusCategoryApi(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key)
             : base(requestProcessor, authMethod, key)
         {
-            
         }
 
-        public async Task<DisqusResponse<DisqusCategory>> CreateAsync(DisqusAccessToken accessToken, DisqusCategoryCreateRequest request)
+        public async Task<DisqusResponse<DisqusCategory>> CreateAsync(DisqusAccessToken accessToken,
+            DisqusCategoryCreateRequest request)
         {
             Collection<KeyValuePair<string, string>> parameters = Parameters
                 .WithOptionalParameter("access_token", accessToken)
                 .WithMultipleParameters(request.Parameters);
 
             return await RequestProcessor
-                .ExecuteAsync<DisqusResponse<DisqusCategory>>(DisqusRequestMethod.Post, DisqusEndpoints.Categories.Create, parameters)
+                .ExecuteAsync<DisqusResponse<DisqusCategory>>(DisqusRequestMethod.Post,
+                    DisqusEndpoints.Categories.Create, parameters)
                 .ConfigureAwait(false);
         }
 
@@ -37,7 +38,8 @@ namespace Disqus.NET
                 .WithParameter("category", categoryId);
 
             return await RequestProcessor
-                .ExecuteAsync<DisqusResponse<DisqusCategory>>(DisqusRequestMethod.Get, DisqusEndpoints.Categories.Details, parameters)
+                .ExecuteAsync<DisqusResponse<DisqusCategory>>(DisqusRequestMethod.Get,
+                    DisqusEndpoints.Categories.Details, parameters)
                 .ConfigureAwait(false);
         }
 
@@ -46,14 +48,16 @@ namespace Disqus.NET
             return await DetailsAsync(null, categoryId).ConfigureAwait(false);
         }
 
-        public async Task<CursoredDisqusResponse<List<DisqusCategory>>> ListAsync(DisqusAccessToken accessToken, DisqusCategoryListRequest request)
+        public async Task<CursoredDisqusResponse<List<DisqusCategory>>> ListAsync(DisqusAccessToken accessToken,
+            DisqusCategoryListRequest request)
         {
             Collection<KeyValuePair<string, string>> parameters = Parameters
                 .WithOptionalParameter("access_token", accessToken)
                 .WithMultipleParameters(request.Parameters);
 
             return await RequestProcessor
-                .ExecuteAsync<CursoredDisqusResponse<List<DisqusCategory>>>(DisqusRequestMethod.Get, DisqusEndpoints.Categories.List, parameters)
+                .ExecuteAsync<CursoredDisqusResponse<List<DisqusCategory>>>(DisqusRequestMethod.Get,
+                    DisqusEndpoints.Categories.List, parameters)
                 .ConfigureAwait(false);
         }
 
@@ -62,34 +66,40 @@ namespace Disqus.NET
             return await ListAsync(null, request).ConfigureAwait(false);
         }
 
-        public async Task<CursoredDisqusResponse<IEnumerable<DisqusPost>>> ListPostsAsync(DisqusAccessToken accessToken, DisqusCategoryListPostsRequest request)
+        public async Task<CursoredDisqusResponse<IEnumerable<DisqusPost>>> ListPostsAsync(DisqusAccessToken accessToken,
+            DisqusCategoryListPostsRequest request)
         {
             Collection<KeyValuePair<string, string>> parameters = Parameters
                 .WithOptionalParameter("access_token", accessToken)
                 .WithMultipleParameters(request.Parameters);
 
             return await RequestProcessor
-                .ExecuteAsync<CursoredDisqusResponse<IEnumerable<DisqusPost>>>(DisqusRequestMethod.Get, DisqusEndpoints.Categories.ListPosts, parameters)
+                .ExecuteAsync<CursoredDisqusResponse<IEnumerable<DisqusPost>>>(DisqusRequestMethod.Get,
+                    DisqusEndpoints.Categories.ListPosts, parameters)
                 .ConfigureAwait(false);
         }
 
-        public async Task<CursoredDisqusResponse<IEnumerable<DisqusPost>>> ListPostsAsync(DisqusCategoryListPostsRequest request)
+        public async Task<CursoredDisqusResponse<IEnumerable<DisqusPost>>> ListPostsAsync(
+            DisqusCategoryListPostsRequest request)
         {
             return await ListPostsAsync(null, request).ConfigureAwait(false);
         }
 
-        public async Task<CursoredDisqusResponse<IEnumerable<DisqusThread>>> ListThreadsAsync(DisqusAccessToken accessToken, DisqusCategoryListThreadsRequest request)
+        public async Task<CursoredDisqusResponse<IEnumerable<DisqusThread>>> ListThreadsAsync(
+            DisqusAccessToken accessToken, DisqusCategoryListThreadsRequest request)
         {
             Collection<KeyValuePair<string, string>> parameters = Parameters
                 .WithOptionalParameter("access_token", accessToken)
                 .WithMultipleParameters(request.Parameters);
 
             return await RequestProcessor
-                .ExecuteAsync<CursoredDisqusResponse<IEnumerable<DisqusThread>>>(DisqusRequestMethod.Get, DisqusEndpoints.Categories.ListThreads, parameters)
+                .ExecuteAsync<CursoredDisqusResponse<IEnumerable<DisqusThread>>>(DisqusRequestMethod.Get,
+                    DisqusEndpoints.Categories.ListThreads, parameters)
                 .ConfigureAwait(false);
         }
 
-        public async Task<CursoredDisqusResponse<IEnumerable<DisqusThread>>> ListThreadsAsync(DisqusCategoryListThreadsRequest request)
+        public async Task<CursoredDisqusResponse<IEnumerable<DisqusThread>>> ListThreadsAsync(
+            DisqusCategoryListThreadsRequest request)
         {
             return await ListThreadsAsync(null, request).ConfigureAwait(false);
         }

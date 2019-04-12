@@ -5,7 +5,7 @@ using Disqus.NET.Extensions;
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusThreadListPostsRequest: DisqusRequestBase
+    public class DisqusThreadListPostsRequest : DisqusRequestBase
     {
         private DisqusThreadListPostsRequest(DisqusThreadLookupType lookupType, string thread)
         {

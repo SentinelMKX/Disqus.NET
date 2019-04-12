@@ -5,7 +5,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusThreadApproveRequest : DisqusRequestBase
     {
-        private DisqusThreadApproveRequest(DisqusThreadLookupType lookupType, string thread) : base()
+        private DisqusThreadApproveRequest(DisqusThreadLookupType lookupType, string thread)
         {
             Parameters.Add(new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
         }

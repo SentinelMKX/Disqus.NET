@@ -5,9 +5,10 @@ using Disqus.NET.Models;
 
 namespace Disqus.NET
 {
-    public class DisqusForumCategoriesApi: DisqusApiBase, IDisqusForumCategoryApi
+    public class DisqusForumCategoriesApi : DisqusApiBase, IDisqusForumCategoryApi
     {
-        public DisqusForumCategoriesApi(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key) 
+        public DisqusForumCategoriesApi(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod,
+            string key)
             : base(requestProcessor, authMethod, key)
         {
         }
@@ -18,7 +19,8 @@ namespace Disqus.NET
                 .WithParameter("forumCategory", forumCategory);
 
             return await RequestProcessor
-                .ExecuteAsync<DisqusResponse<DisqusForumCategory>>(DisqusRequestMethod.Get, DisqusEndpoints.ForumCategories.Details, parameters)
+                .ExecuteAsync<DisqusResponse<DisqusForumCategory>>(DisqusRequestMethod.Get,
+                    DisqusEndpoints.ForumCategories.Details, parameters)
                 .ConfigureAwait(false);
         }
 
@@ -27,7 +29,8 @@ namespace Disqus.NET
             Collection<KeyValuePair<string, string>> parameters = Parameters;
 
             return await RequestProcessor
-                .ExecuteAsync<DisqusResponse<IEnumerable<DisqusForumCategory>>>(DisqusRequestMethod.Get, DisqusEndpoints.ForumCategories.List, parameters)
+                .ExecuteAsync<DisqusResponse<IEnumerable<DisqusForumCategory>>>(DisqusRequestMethod.Get,
+                    DisqusEndpoints.ForumCategories.List, parameters)
                 .ConfigureAwait(false);
         }
     }

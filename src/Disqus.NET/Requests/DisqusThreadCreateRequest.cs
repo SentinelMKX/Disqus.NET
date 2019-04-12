@@ -5,7 +5,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusThreadCreateRequest : DisqusRequestBase
     {
-        private DisqusThreadCreateRequest(string forum, string title) : base()
+        private DisqusThreadCreateRequest(string forum, string title)
         {
             Parameters.Add(new KeyValuePair<string, string>("forum", forum));
             Parameters.Add(new KeyValuePair<string, string>("title", title));
@@ -56,6 +56,6 @@ namespace Disqus.NET.Requests
             Parameters.Add(new KeyValuePair<string, string>("slug", slug));
 
             return this;
-        }        
+        }
     }
 }

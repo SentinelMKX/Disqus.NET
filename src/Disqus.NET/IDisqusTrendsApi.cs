@@ -8,16 +8,17 @@ namespace Disqus.NET
     public interface IDisqusTrendsApi
     {
         /// <summary>
-        /// Returns a list of trending threads.
+        ///     Returns a list of trending threads.
         /// </summary>
         /// <remarks>https://disqus.com/api/docs/trends/listThreads/</remarks>
         /// <param name="accessToken"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        Task<DisqusResponse<IEnumerable<DisqusTrend>>> ListThreadsAsync(DisqusAccessToken accessToken, DisqusTrendListThreadsRequest request);
+        Task<DisqusResponse<IEnumerable<DisqusTrend>>> ListThreadsAsync(DisqusAccessToken accessToken,
+            DisqusTrendListThreadsRequest request);
 
         /// <summary>
-        /// Returns a list of trending threads.
+        ///     Returns a list of trending threads.
         /// </summary>
         /// <remarks>https://disqus.com/api/docs/trends/listThreads/</remarks>
         /// <param name="request"></param>

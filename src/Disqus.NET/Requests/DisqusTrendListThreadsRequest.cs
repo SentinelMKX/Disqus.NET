@@ -4,7 +4,7 @@ using Disqus.NET.Extensions;
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusTrendListThreadsRequest: DisqusRequestBase
+    public class DisqusTrendListThreadsRequest : DisqusRequestBase
     {
         private DisqusTrendListThreadsRequest()
         {

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusWhitelistRemoveRequest: DisqusRequestBase
+    public class DisqusWhitelistRemoveRequest : DisqusRequestBase
     {
         private DisqusWhitelistRemoveRequest(string forum)
         {

@@ -6,137 +6,132 @@ namespace Disqus.NET.Models
     public class DisqusUserBase
     {
         /// <summary>
-        /// The network-wide unique ID of the user. This never changes, even if the person changes their unique username.
+        ///     The network-wide unique ID of the user. This never changes, even if the person changes their unique username.
         /// </summary>
         [JsonProperty("id")]
         public int Id { get; set; }
 
         /// <summary>
-        /// The unique username associated with the account.
+        ///     The unique username associated with the account.
         /// </summary>
         [JsonProperty("username")]
         public string Username { get; set; }
 
         /// <summary>
-        /// The display name of the user as entered in their account settings.
+        ///     The display name of the user as entered in their account settings.
         /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; }
 
         /// <summary>
-        /// The display avatar of the user
+        ///     The display avatar of the user
         /// </summary>
         [JsonProperty("avatar")]
         public DisqusAvatar Avatar { get; set; }
 
         /// <summary>
-        /// Email address of the user
-        /// <remarks>Will only return email if request is authenticated and authenticated user has 'email' permission</remarks>
+        ///     Email address of the user
+        ///     <remarks>Will only return email if request is authenticated and authenticated user has 'email' permission</remarks>
         /// </summary>
         [JsonProperty("email")]
         public string Email { get; set; }
 
         /// <summary>
-        /// Hashed email address of the user
-        /// <remarks>Will only return email if request is authenticated and authenticated user has 'email' permission</remarks>
+        ///     Hashed email address of the user
+        ///     <remarks>Will only return email if request is authenticated and authenticated user has 'email' permission</remarks>
         /// </summary>
         [JsonProperty("emailHash")]
         public string EmailHash { get; set; }
 
         /// <summary>
-        /// The user's bio.
+        ///     The user's bio.
         /// </summary>
         [JsonProperty("about")]
         public string About { get; set; }
 
         /// <summary>
-        /// The date/time that the user created the account.
+        ///     The date/time that the user created the account.
         /// </summary>
         [JsonProperty("joinedAt")]
         public DateTime? Joined { get; set; }
 
         /// <summary>
-        /// Location that user specified in their account settings.
+        ///     Location that user specified in their account settings.
         /// </summary>
         [JsonProperty("location")]
         public string Location { get; set; }
 
         /// <summary>
-        /// The user's website URL as entered in their account settings.
+        ///     The user's website URL as entered in their account settings.
         /// </summary>
         [JsonProperty("url")]
         public string Url { get; set; }
 
         /// <summary>
-        /// The disqus.com permalink URL to their profile.
+        ///     The disqus.com permalink URL to their profile.
         /// </summary>
         [JsonProperty("profileUrl")]
         public string ProfileUrl { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         [JsonProperty("signedUrl")]
         public string SignedUrl { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         [JsonProperty("disable3rdPartyTrackers")]
         public bool? DisableThirdPartyTrackers { get; set; }
 
         /// <summary>
-        /// Whether or not the user has registered any forums under this account.
+        ///     Whether or not the user has registered any forums under this account.
         /// </summary>
         [JsonProperty("isPrimary")]
         public bool? IsPrimary { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         [JsonProperty("isPrivate")]
         public bool? IsPrivate { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         [JsonProperty("isPowerContributor")]
         public bool? IsPowerContributor { get; set; }
 
         /// <summary>
-        /// Whether or not the user has a registered account or not
+        ///     Whether or not the user has a registered account or not
         /// </summary>
         [JsonProperty("isAnonymous")]
         public bool? IsAnonymous { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         [JsonProperty("flaggedForSpamReview")]
         public bool? FlaggedForSpamReview { get; set; }
 
         /// <summary>
-        /// Whether or not the person making the request is following the user.
-        /// <remarks>Will only return true if request is authenticated, and authenticated user has chosen to follow this user.</remarks>
+        ///     Whether or not the person making the request is following the user.
+        ///     <remarks>Will only return true if request is authenticated, and authenticated user has chosen to follow this user.</remarks>
         /// </summary>
         [JsonProperty("isFollowing")]
         public bool? IsFollowing { get; set; }
 
         /// <summary>
-        /// Whether or not the user follows the person making the request.
-        /// <remarks>Will only return true if request is authenticated, and the user has chosen to follow authenticated user.</remarks>
+        ///     Whether or not the user follows the person making the request.
+        ///     <remarks>Will only return true if request is authenticated, and the user has chosen to follow authenticated user.</remarks>
         /// </summary>
         [JsonProperty("isFollowedBy")]
         public bool? IsFollowedBy { get; set; }
 
         /// <summary>
-        /// <remarks>Will only return value if request is authenticated</remarks>
+        ///     <remarks>Will only return value if request is authenticated</remarks>
         /// </summary>
         [JsonProperty("homeOnboardingComplete")]
         public bool? HomeOnboardingComplete { get; set; }
 
         /// <summary>
-        /// <remarks>Will only return value if request is authenticated</remarks>
+        ///     <remarks>Will only return value if request is authenticated</remarks>
         /// </summary>
         [JsonProperty("homeFeedOnboardingComplete")]
         public bool? HomeFeedOnboardingComplete { get; set; }

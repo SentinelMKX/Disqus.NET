@@ -7,6 +7,7 @@ namespace Disqus.NET
 {
     public interface IDisqusApplicationsApi
     {
-        Task<DisqusResponse<IEnumerable<DisqusApplicationUsage>>> ListUsageAsync(DisqusAccessToken accessToken, DisqusApplicationListUsageRequest request);
+        Task<DisqusResponse<IEnumerable<DisqusApplicationUsage>>> ListUsageAsync(DisqusAccessToken accessToken,
+            DisqusApplicationListUsageRequest request);
     }
 }

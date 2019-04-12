@@ -8,40 +8,47 @@ namespace Disqus.NET
 {
     public class DisqusWhitelistsApi : DisqusApiBase, IDisqusWhitelistsApi
     {
-        public DisqusWhitelistsApi(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key) : base(requestProcessor, authMethod, key)
+        public DisqusWhitelistsApi(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key) :
+            base(requestProcessor, authMethod, key)
         {
         }
 
-        public async Task<DisqusResponse<IEnumerable<DisqusWhitelistEntry>>> AddAsync(DisqusAccessToken accessToken, DisqusWhitelistAddRequest request)
+        public async Task<DisqusResponse<IEnumerable<DisqusWhitelistEntry>>> AddAsync(DisqusAccessToken accessToken,
+            DisqusWhitelistAddRequest request)
         {
             Collection<KeyValuePair<string, string>> parameters = Parameters
                 .WithMultipleParameters(request.Parameters)
                 .WithOptionalParameter("access_token", accessToken);
 
             return await RequestProcessor
-                .ExecuteAsync<DisqusResponse<IEnumerable<DisqusWhitelistEntry>>>(DisqusRequestMethod.Post, DisqusEndpoints.Whitelists.Add, parameters)
+                .ExecuteAsync<DisqusResponse<IEnumerable<DisqusWhitelistEntry>>>(DisqusRequestMethod.Post,
+                    DisqusEndpoints.Whitelists.Add, parameters)
                 .ConfigureAwait(false);
         }
 
-        public async Task<CursoredDisqusResponse<IEnumerable<DisqusWhitelistEntry>>> ListAsync(DisqusAccessToken accessToken, DisqusWhitelistListRequest request)
+        public async Task<CursoredDisqusResponse<IEnumerable<DisqusWhitelistEntry>>> ListAsync(
+            DisqusAccessToken accessToken, DisqusWhitelistListRequest request)
         {
             Collection<KeyValuePair<string, string>> parameters = Parameters
                 .WithMultipleParameters(request.Parameters)
                 .WithOptionalParameter("access_token", accessToken);
 
             return await RequestProcessor
-                .ExecuteAsync<CursoredDisqusResponse<IEnumerable<DisqusWhitelistEntry>>>(DisqusRequestMethod.Get, DisqusEndpoints.Whitelists.List, parameters)
+                .ExecuteAsync<CursoredDisqusResponse<IEnumerable<DisqusWhitelistEntry>>>(DisqusRequestMethod.Get,
+                    DisqusEndpoints.Whitelists.List, parameters)
                 .ConfigureAwait(false);
         }
 
-        public async Task<DisqusResponse<IEnumerable<DisqusWhitelistEntry>>> RemoveAsync(DisqusAccessToken accessToken, DisqusWhitelistRemoveRequest request)
+        public async Task<DisqusResponse<IEnumerable<DisqusWhitelistEntry>>> RemoveAsync(DisqusAccessToken accessToken,
+            DisqusWhitelistRemoveRequest request)
         {
             Collection<KeyValuePair<string, string>> parameters = Parameters
                 .WithMultipleParameters(request.Parameters)
                 .WithOptionalParameter("access_token", accessToken);
 
             return await RequestProcessor
-                .ExecuteAsync<DisqusResponse<IEnumerable<DisqusWhitelistEntry>>>(DisqusRequestMethod.Post, DisqusEndpoints.Whitelists.Remove, parameters)
+                .ExecuteAsync<DisqusResponse<IEnumerable<DisqusWhitelistEntry>>>(DisqusRequestMethod.Post,
+                    DisqusEndpoints.Whitelists.Remove, parameters)
                 .ConfigureAwait(false);
         }
     }

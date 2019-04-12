@@ -4,7 +4,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusForumRemoveModeratorRequest : DisqusRequestBase
     {
-        private DisqusForumRemoveModeratorRequest() : base()
+        private DisqusForumRemoveModeratorRequest()
         {
         }
 

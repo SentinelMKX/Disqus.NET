@@ -5,7 +5,7 @@ namespace Disqus.NET.Requests
     public class DisqusUserListForumsRequest : DisqusRequestBase
     {
         private DisqusUserListForumsRequest()
-        {    
+        {
         }
 
         public static DisqusUserListForumsRequest New()

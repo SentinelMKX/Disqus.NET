@@ -2,7 +2,7 @@
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusApplicationListUsageRequest: DisqusRequestBase
+    public class DisqusApplicationListUsageRequest : DisqusRequestBase
     {
         private DisqusApplicationListUsageRequest()
         {

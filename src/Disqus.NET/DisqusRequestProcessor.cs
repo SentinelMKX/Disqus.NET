@@ -7,13 +7,13 @@ namespace Disqus.NET
 {
     public class DisqusRequestProcessor : IDisqusRequestProcessor
     {
-        private readonly IDisqusRestClient _restClient;
-
         private static readonly JsonSerializerSettings SerializerSettings = new JsonSerializerSettings
         {
             NullValueHandling = NullValueHandling.Ignore,
             MissingMemberHandling = MissingMemberHandling.Ignore
         };
+
+        private readonly IDisqusRestClient _restClient;
 
         public DisqusRequestProcessor(IDisqusRestClient restClient)
         {
@@ -21,7 +21,6 @@ namespace Disqus.NET
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <exception cref="DisqusApiException"></exception>
         /// <typeparam name="T"></typeparam>
@@ -29,25 +28,26 @@ namespace Disqus.NET
         /// <param name="endpoint"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public async Task<T> ExecuteAsync<T>(DisqusRequestMethod method, string endpoint, ICollection<KeyValuePair<string, string>> parameters)
+        public async Task<T> ExecuteAsync<T>(DisqusRequestMethod method, string endpoint,
+            ICollection<KeyValuePair<string, string>> parameters)
         {
-            HttpResponseMessage response = await ExecuteAsync(method, endpoint, parameters).ConfigureAwait(false);
-            
-            string content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var response = await ExecuteAsync(method, endpoint, parameters).ConfigureAwait(false);
+
+            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             if (response.IsSuccessStatusCode)
             {
                 return JsonConvert.DeserializeObject<T>(content, SerializerSettings);
             }
-            else
-            {
-                IDisqusResponse<string> errorResponse = JsonConvert.DeserializeObject<DisqusErrorResponse>(content, SerializerSettings);
 
-                throw new DisqusApiException(errorResponse.Code, errorResponse.Response);
-            }
+            IDisqusResponse<string> errorResponse =
+                JsonConvert.DeserializeObject<DisqusErrorResponse>(content, SerializerSettings);
+
+            throw new DisqusApiException(errorResponse.Code, errorResponse.Response);
         }
 
-        private async Task<HttpResponseMessage> ExecuteAsync(DisqusRequestMethod method, string endpoint, ICollection<KeyValuePair<string, string>> parameters)
+        private async Task<HttpResponseMessage> ExecuteAsync(DisqusRequestMethod method, string endpoint,
+            ICollection<KeyValuePair<string, string>> parameters)
         {
             switch (method)
             {

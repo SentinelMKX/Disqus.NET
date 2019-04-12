@@ -6,7 +6,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusThreadDetailsRequest : DisqusRequestBase
     {
-        private DisqusThreadDetailsRequest(DisqusThreadLookupType lookupType, string thread) : base()
+        private DisqusThreadDetailsRequest(DisqusThreadLookupType lookupType, string thread)
         {
             Parameters.Add(new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
         }

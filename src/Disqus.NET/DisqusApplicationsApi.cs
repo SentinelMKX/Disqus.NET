@@ -9,25 +9,28 @@ namespace Disqus.NET
 {
     public class DisqusApplicationsApi : DisqusApiBase, IDisqusApplicationsApi
     {
-        public DisqusApplicationsApi(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key) : base(requestProcessor, authMethod, key)
+        public DisqusApplicationsApi(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key)
+            : base(requestProcessor, authMethod, key)
         {
         }
 
-        public async Task<DisqusResponse<IEnumerable<DisqusApplicationUsage>>> ListUsageAsync(DisqusAccessToken accessToken, DisqusApplicationListUsageRequest request)
+        public async Task<DisqusResponse<IEnumerable<DisqusApplicationUsage>>> ListUsageAsync(
+            DisqusAccessToken accessToken, DisqusApplicationListUsageRequest request)
         {
             Collection<KeyValuePair<string, string>> parameters = Parameters
                 .WithMultipleParameters(request.Parameters)
                 .WithOptionalParameter("access_token", accessToken);
 
             var response = await RequestProcessor
-                .ExecuteAsync<DisqusResponse<IEnumerable<string[]>>>(DisqusRequestMethod.Get, DisqusEndpoints.Applications.ListUsage, parameters)
+                .ExecuteAsync<DisqusResponse<IEnumerable<string[]>>>(DisqusRequestMethod.Get,
+                    DisqusEndpoints.Applications.ListUsage, parameters)
                 .ConfigureAwait(false);
 
-            List<DisqusApplicationUsage> usages = new List<DisqusApplicationUsage>();
+            var usages = new List<DisqusApplicationUsage>();
 
             foreach (var item in response.Response)
             {
-                DisqusApplicationUsage usage = new DisqusApplicationUsage
+                var usage = new DisqusApplicationUsage
                 {
                     Date = DateTime.Parse(item[0]),
                     Usage = int.Parse(item[1])

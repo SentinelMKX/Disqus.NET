@@ -5,9 +5,9 @@ using Disqus.NET.Extensions;
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusThreadListRequest: DisqusRequestBase
+    public class DisqusThreadListRequest : DisqusRequestBase
     {
-        private DisqusThreadListRequest() : base()
+        private DisqusThreadListRequest()
         {
         }
 
@@ -26,7 +26,7 @@ namespace Disqus.NET.Requests
 
         public DisqusThreadListRequest Forum(params string[] forums)
         {
-            var parameters = forums.Select(forum=> new KeyValuePair<string, string>("forum", forum));
+            var parameters = forums.Select(forum => new KeyValuePair<string, string>("forum", forum));
             Parameters.AddRange(parameters);
 
             return this;
@@ -34,7 +34,8 @@ namespace Disqus.NET.Requests
 
         public DisqusThreadListRequest Thread(DisqusThreadLookupType lookupType, params string[] threads)
         {
-            var parameters = threads.Select(thread => new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
+            var parameters = threads.Select(thread =>
+                new KeyValuePair<string, string>(lookupType.AsParameterName(), thread));
             Parameters.AddRange(parameters);
 
             return this;

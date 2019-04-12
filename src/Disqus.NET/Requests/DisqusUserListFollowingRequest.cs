@@ -5,7 +5,7 @@ namespace Disqus.NET.Requests
     public class DisqusUserListFollowingRequest : DisqusRequestBase
     {
         private DisqusUserListFollowingRequest()
-        {    
+        {
         }
 
         public static DisqusUserListFollowingRequest New()

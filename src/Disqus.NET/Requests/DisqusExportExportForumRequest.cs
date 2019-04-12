@@ -2,7 +2,7 @@
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusExportExportForumRequest: DisqusRequestBase
+    public class DisqusExportExportForumRequest : DisqusRequestBase
     {
         private DisqusExportExportForumRequest(string forum)
         {

@@ -6,7 +6,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusThreadListHotRequest : DisqusRequestBase
     {
-        private DisqusThreadListHotRequest() : base()
+        private DisqusThreadListHotRequest()
         {
         }
 
@@ -25,7 +25,7 @@ namespace Disqus.NET.Requests
 
         public DisqusThreadListHotRequest Forum(params string[] forums)
         {
-            var parameters = forums.Select(forum=> new KeyValuePair<string, string>("forum", forum));
+            var parameters = forums.Select(forum => new KeyValuePair<string, string>("forum", forum));
             Parameters.AddRange(parameters);
 
             return this;

@@ -1,6 +1,6 @@
 ﻿namespace Disqus.NET
 {
-    public class DisqusResponse<T> : IDisqusResponse<T> where T: class
+    public class DisqusResponse<T> : IDisqusResponse<T> where T : class
     {
         public DisqusApiResponseCode Code { get; set; }
 

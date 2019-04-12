@@ -5,7 +5,7 @@ using Disqus.NET.Extensions;
 
 namespace Disqus.NET.Requests
 {
-    public class DisqusUserListActivityRequest: DisqusRequestBase
+    public class DisqusUserListActivityRequest : DisqusRequestBase
     {
         private DisqusUserListActivityRequest()
         {
@@ -79,7 +79,7 @@ namespace Disqus.NET.Requests
         }
 
         /// <summary>
-        /// Looks up an anonymous user by unique hash
+        ///     Looks up an anonymous user by unique hash
         /// </summary>
         /// <param name="anonymousUser"></param>
         /// <returns></returns>

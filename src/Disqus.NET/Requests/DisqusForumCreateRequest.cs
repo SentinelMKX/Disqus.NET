@@ -6,14 +6,13 @@ namespace Disqus.NET.Requests
 {
     public class DisqusForumCreateRequest : DisqusRequestBase
     {
-        private DisqusForumCreateRequest(string name, string shortName) : base()
+        private DisqusForumCreateRequest(string name, string shortName)
         {
             Parameters.Add(new KeyValuePair<string, string>("name", name));
             Parameters.Add(new KeyValuePair<string, string>("short_name", shortName));
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="name"></param>
         /// <param name="shortName">id</param>

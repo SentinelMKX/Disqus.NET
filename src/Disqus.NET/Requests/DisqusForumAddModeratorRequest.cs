@@ -4,20 +4,19 @@ namespace Disqus.NET.Requests
 {
     public class DisqusForumAddModeratorRequest : DisqusRequestBase
     {
-        private DisqusForumAddModeratorRequest(string forum, string username) : base()
+        private DisqusForumAddModeratorRequest(string forum, string username)
         {
             Parameters.Add(new KeyValuePair<string, string>("forum", forum));
             Parameters.Add(new KeyValuePair<string, string>("user:username", username));
         }
 
-        private DisqusForumAddModeratorRequest(string forum, int userId) : base()
+        private DisqusForumAddModeratorRequest(string forum, int userId)
         {
             Parameters.Add(new KeyValuePair<string, string>("forum", forum));
             Parameters.Add(new KeyValuePair<string, string>("user", userId.ToString()));
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="forum"></param>
         /// <param name="username">id</param>

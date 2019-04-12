@@ -4,7 +4,7 @@ namespace Disqus.NET.Requests
 {
     public class DisqusForumListFollowersRequest : DisqusRequestBase
     {
-        private DisqusForumListFollowersRequest(string forum) : base()
+        private DisqusForumListFollowersRequest(string forum)
         {
             Parameters.Add(new KeyValuePair<string, string>("forum", forum));
         }
