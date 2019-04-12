@@ -1,6 +1,6 @@
 # Disqus.NET
 
-[![Build status](https://ci.appveyor.com/api/projects/status/p3s5gwieesjlwmhx/branch/dev?svg=true)](https://ci.appveyor.com/project/akaSybe/disqus-net/branch/dev)
+[![Build status](https://ci.appveyor.com/api/projects/status/xad7k0dd8k7999m9/branch/dev?svg=true)](https://ci.appveyor.com/project/SentinelMKX/disqus-net/branch/dev)
 
 ## Example usage
 
