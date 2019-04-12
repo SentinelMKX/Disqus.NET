@@ -10,11 +10,9 @@ namespace Disqus.NET
 
         public DisqusApiBase(IDisqusRequestProcessor requestProcessor, DisqusAuthMethod authMethod, string key)
         {
-            if (requestProcessor == null) throw new ArgumentNullException(nameof(requestProcessor));
-
             if (string.IsNullOrWhiteSpace(key)) throw new ArgumentNullException(nameof(key));
 
-            RequestProcessor = requestProcessor;
+            RequestProcessor = requestProcessor ?? throw new ArgumentNullException(nameof(requestProcessor));
             Auth = new DisqusAuth(authMethod, key);
         }
 
@@ -27,10 +25,11 @@ namespace Disqus.NET
 
             public DisqusParameters(DisqusAuthMethod authMethod, string key)
             {
-                _parameters = new List<KeyValuePair<string, string>>();
-                _parameters.Add(
+                _parameters = new List<KeyValuePair<string, string>>
+                {
                     new KeyValuePair<string, string>(
-                        authMethod == DisqusAuthMethod.PublicKey ? "api_key" : "api_secret", key));
+                        authMethod == DisqusAuthMethod.PublicKey ? "api_key" : "api_secret", key)
+                };
             }
 
             public static implicit operator Collection<KeyValuePair<string, string>>(DisqusParameters obj)

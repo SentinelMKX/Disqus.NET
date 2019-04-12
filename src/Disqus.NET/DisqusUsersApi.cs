@@ -90,8 +90,7 @@ namespace Disqus.NET
 
             foreach (var interestingForumItem in response.Response.Items)
             {
-                DisqusUser forum;
-                if (response.Response.Objects.TryGetValue(interestingForumItem.Id, out forum))
+                if (response.Response.Objects.TryGetValue(interestingForumItem.Id, out var forum))
                     forums.Add(new DisqusInterestingObject<DisqusUser>
                     {
                         Reason = interestingForumItem.Reason,

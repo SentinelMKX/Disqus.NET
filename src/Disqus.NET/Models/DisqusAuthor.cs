@@ -4,9 +4,7 @@
     {
         public static implicit operator DisqusAuthor(string str)
         {
-            int id;
-
-            int.TryParse(str, out id);
+            int.TryParse(str, out var id);
 
             return new DisqusAuthor
             {

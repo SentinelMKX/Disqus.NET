@@ -16,8 +16,7 @@ namespace Disqus.NET.Models
 
         public static implicit operator DisqusCategory(string str)
         {
-            int id;
-            int.TryParse(str, out id);
+            int.TryParse(str, out var id);
 
             return new DisqusCategory
             {
