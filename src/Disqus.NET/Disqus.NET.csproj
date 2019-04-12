@@ -1,24 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Disqus API for .NET</Description>
-    <VersionPrefix>1.0.2</VersionPrefix>
-    <Authors>Arisa</Authors>
+    <Description>
+      Disqus API for .NET updated by Arisa,
+      Originally by Alexandr Shestakov
+    </Description>
+    <VersionPrefix>1.0.3</VersionPrefix>
+    <Authors>Arisa, Alexandr Shestakov</Authors>
     <TargetFrameworks>netstandard1.3;net45</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Disqus.Net</AssemblyName>
 
-    <PackageId>Disqus.Net</PackageId>
+    <PackageId>Disqus.NET-Updated-By-Arisa</PackageId>
     <PackageTags>disqus,sdk,api,async</PackageTags>
     <PackageReleaseNotes>https://github.com/SentinelMKX/Disqus.NET-Updated-By-Arisa/releases</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/SentinelMKX/Disqus.NET-Updated-By-Arisa</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/akaSybe/Disqus.NET/dev/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/SentinelMKX/Disqus.NET-Updated-By-Arisa/blob/dev/LICENSE.md</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/SentinelMKX/Disqus.NET-Updated-By-Arisa</RepositoryUrl>
 
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     
   </PropertyGroup>
 
