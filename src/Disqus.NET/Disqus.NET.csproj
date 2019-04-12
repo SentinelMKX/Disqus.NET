@@ -1,20 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Disqus API for .NET</Description>
     <VersionPrefix>1.0.2</VersionPrefix>
-    <Authors>Alexandr Shestakov</Authors>
+    <Authors>Arisa</Authors>
     <TargetFrameworks>netstandard1.3;net45</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Disqus.Net</AssemblyName>
 
     <PackageId>Disqus.Net</PackageId>
     <PackageTags>disqus,sdk,api,async</PackageTags>
-    <PackageReleaseNotes>https://github.com/akaSybe/Disqus.NET/releases</PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/akaSybe/Disqus.NET</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/SentinelMKX/Disqus.NET-Updated-By-Arisa/releases</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/SentinelMKX/Disqus.NET-Updated-By-Arisa</PackageProjectUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/akaSybe/Disqus.NET/dev/LICENSE.md</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/akaSybe/Disqus.NET</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SentinelMKX/Disqus.NET-Updated-By-Arisa</RepositoryUrl>
 
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     
@@ -23,12 +23,15 @@
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
-    <PackageReference Include="System.Net.Http" Version="4.3.3" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
   
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <DefineConstants>NET45</DefineConstants>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.3|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
@@ -39,6 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
   
